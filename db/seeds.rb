@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+sharnell = User.create(
+    username: 'solaya_reign', 
+    email: 'testemail.com', 
+    password: '123', 
+    bio: 'Welcome to my world', 
+    photo: 'https://avatars.githubusercontent.com/u/50125301?v=4'
+)
+
+Post.create(
+ photo: "https://avatars.githubusercontent.com/u/50125301?v=4",
+ likes: 1,
+ comment: " This os my fist post",
+ user_id: sharnell.id
+)
+
