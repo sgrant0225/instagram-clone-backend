@@ -9,7 +9,7 @@
 sharnell = User.create(
     username: 'solaya_reign', 
     email: 'testemail.com', 
-    password: '123', 
+    password_digest: '123', 
     bio: 'Welcome to my world', 
     photo: 'https://avatars.githubusercontent.com/u/50125301?v=4'
 )
