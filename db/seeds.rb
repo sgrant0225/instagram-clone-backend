@@ -15,9 +15,9 @@ sharnell = User.create(
 )
 
 Post.create(
- photo: "https://avatars.githubusercontent.com/u/50125301?v=4",
+ image: "https://avatars.githubusercontent.com/u/50125301?v=4",
  likes: 1,
- comment: " This os my fist post",
+ caption: " This is my first post",
  user_id: sharnell.id
 )
 
