@@ -4,19 +4,19 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     posts = Post.all
-   #byebug
     render json: posts
   end
 
   # GET /posts/1
   def show
-    render json: post, serializer: PostSerializer
+    render json: post
   end
 
   # POST /posts
   def create
-    post = Post.new(post_params)
-
+    post = logged_in_user.posts.build(post_params)
+  #  post = Post.new(post_params)
+  #  post.user_id = logged_in_user.id
     if post.save
       render json: post, status: :created, location: post
     else
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:image, :likes, :caption)
+      params.permit(:image, :likes, :caption)
     end
 end
