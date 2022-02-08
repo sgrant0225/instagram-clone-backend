@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:update, :destroy]
 
   # GET /posts
   def index
@@ -9,7 +9,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: post
+    post = Post.find(params[:id])
+    render json: post, serializer: PostSerializer
+    
   end
 
   # POST /posts

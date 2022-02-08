@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 sharnell = User.create(
-    username: 'solaya_reign', 
+    username: 'code_red', 
     email: 'test@email.com', 
     password: '123', 
     bio: 'Welcome to my world', 
@@ -24,18 +24,20 @@ terrence = User.create(
 
 Post.create([
  {
-    image: "https://avatars.githubusercontent.com/u/50125301?v=4",
+    image: "https://media.istockphoto.com/photos/programming-source-code-abstract-background-picture-id1047259374?k=20&m=1047259374&s=612x612&w=0&h=pt3XbBvrmiYgoYmVzsaUeXtV8vw_jJI9Ly8P7AL6Qig=",
     likes: 1,
     caption: "This is my first post",
     user_id: sharnell.id
 },   
  {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwtb9ZuR4kvaR8ZS4IIkIiX0eNDqYHdHNWew&usqp=CAU",
+    image: "https://thumbs.dreamstime.com/z/hungry-cat-holding-food-bowl-isolated-white-background-70516917.jpg",
     likes: 1,
-    caption: "Hey Y'all",
+    caption: "Hungry Cat",
     user_id: terrence.id 
  }
 
 
 ])
+
+Comment.create(text: "Hey. Dope Page!", post_id: Post.first.id, user_id: terrence.id )
 

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :posts, only:[:index, :create, :destroy]
-   resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] 
+    resources :posts, only:[:index, :create, :show, :destroy] do
+      resources :comments, only: [:create]
+    end
 
   post '/signup', to: "users#create"
   get '/profile', to: "users#show"
@@ -10,5 +12,5 @@ Rails.application.routes.draw do
   #get '/posts', to: "posts#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
- 
+  
 end
